@@ -51,16 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Camera &amp; UI\CameraFollow.cs" />
-     <Compile Include="Assets\Camera &amp; UI\CameraRaycaster.cs" />
-     <Compile Include="Assets\Camera &amp; UI\CursorAffordance.cs" />
-     <Compile Include="Assets\Camera &amp; UI\PlayerHealthBar.cs" />
-     <Compile Include="Assets\Enemies\Enemy.cs" />
-     <Compile Include="Assets\Enemies\EnemyHealthBar.cs" />
-     <Compile Include="Assets\Enemies\EnemyUI.cs" />
-     <Compile Include="Assets\Player\Player.cs" />
-     <Compile Include="Assets\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\Player\Projectile.cs" />
+     <Compile Include="Assets\CameraUI\CameraFollow.cs" />
+     <Compile Include="Assets\CameraUI\CameraRaycaster.cs" />
+     <Compile Include="Assets\CameraUI\CursorAffordance.cs" />
+     <Compile Include="Assets\CameraUI\PlayerHealthBar.cs" />
+     <Compile Include="Assets\Characters\Enemies\Enemy.cs" />
+     <Compile Include="Assets\Characters\Enemies\EnemyHealthBar.cs" />
+     <Compile Include="Assets\Characters\Enemies\EnemyUI.cs" />
+     <Compile Include="Assets\Characters\Player\Player.cs" />
+     <Compile Include="Assets\Characters\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Characters\Player\Projectile.cs" />
      <Compile Include="Assets\Utility\IDamagable.cs" />
      <Compile Include="Assets\Utility\SpinMe.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
