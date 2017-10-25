@@ -12,7 +12,7 @@ public class Player : MonoBehaviour, IDamagable {
 	[SerializeField] GameObject weaponSocket;
 
 
-	//GameObject currentTarget;
+
 	float currentHealthPoints;
 	CameraRaycaster cameraRaycaster;
 	float lastHitTime = 0f;
@@ -46,7 +46,6 @@ public class Player : MonoBehaviour, IDamagable {
 				return;
 			}
 
-			//currentTarget = enemy;
 			var enemyComponent = enemy.GetComponent<Enemy> ();
 			if (Time.time - lastHitTime > minTimeBetweenHits) {
 				enemyComponent.TakeDamage (damagePerHit);

@@ -53,11 +53,11 @@ GameObject:
   - component: {fileID: 54900197241753528}
   - component: {fileID: 136085006382495260}
   - component: {fileID: 114930023211851504}
-  - component: {fileID: 114077484784722056}
   - component: {fileID: 114893306681618172}
   - component: {fileID: 222429044817287796}
   - component: {fileID: 114931777866090272}
   - component: {fileID: 195341051135565194}
+  - component: {fileID: 114058417520055728}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -646,7 +646,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114077484784722056
+--- !u!114 &114058417520055728
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -657,8 +657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b295263486ad9480a90f9888ea19cf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkMoveStopRadius: 0.2
-  attackMoveStopRadius: 5
 --- !u!114 &114893306681618172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -674,6 +672,8 @@ MonoBehaviour:
   damagePerHit: 50
   minTimeBetweenHits: 1
   maxAttackRange: 2
+  weaponInUse: {fileID: 11400000, guid: d043beeba17064ca9a0276b7c4ae2416, type: 2}
+  weaponSocket: {fileID: 1406599833715030}
 --- !u!114 &114930023211851504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -715,9 +715,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 1.6
+  m_Height: 1.9
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!137 &137371165954750626
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -828,6 +828,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 97.021, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.94, y: 9.61}
+  m_AnchoredPosition: {x: 70.94, y: 9.688}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
