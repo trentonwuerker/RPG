@@ -8,9 +8,11 @@ public class Player : MonoBehaviour, IDamagable {
 	[SerializeField] float damagePerHit = 10f;
 	[SerializeField] float minTimeBetweenHits = .5f;
 	[SerializeField] float maxAttackRange = 2f;
+	[SerializeField] Weapon weaponInUse;
+	[SerializeField] GameObject weaponSocket;
 
 
-	GameObject currentTarget;
+	//GameObject currentTarget;
 	float currentHealthPoints;
 	CameraRaycaster cameraRaycaster;
 	float lastHitTime = 0f;
@@ -25,6 +27,15 @@ public class Player : MonoBehaviour, IDamagable {
 		cameraRaycaster = FindObjectOfType<CameraRaycaster> ();
 		cameraRaycaster.notifyMouseClickObservers += OnMouseClick;
 		currentHealthPoints = maxHealthPoints;
+		PutWeaponInHand ();
+	}
+
+	void PutWeaponInHand() {
+		var weaponPrefab = weaponInUse.GetWeaponPrefab ();
+		var weapon = Instantiate (weaponPrefab, weaponSocket.transform);
+		weapon.transform.localPosition = weaponInUse.gripTransform.localPosition;
+		weapon.transform.localRotation = weaponInUse.gripTransform.localRotation;
+
 	}
 
 	void OnMouseClick(RaycastHit raycastHit, int layerHit) {
@@ -35,7 +46,7 @@ public class Player : MonoBehaviour, IDamagable {
 				return;
 			}
 
-			currentTarget = enemy;
+			//currentTarget = enemy;
 			var enemyComponent = enemy.GetComponent<Enemy> ();
 			if (Time.time - lastHitTime > minTimeBetweenHits) {
 				enemyComponent.TakeDamage (damagePerHit);

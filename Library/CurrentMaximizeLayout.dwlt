@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 342}
   m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
-  controlID: 74225
+  controlID: 2804
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 342}
   m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
-  controlID: 74226
+  controlID: 2805
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 74227
+  controlID: 2783
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -200,10 +200,10 @@ MonoBehaviour:
     width: 316
     height: 509
   m_TreeViewState:
-    scrollPos: {x: 0, y: 784}
-    m_SelectedIDs: 
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e8260100
     m_LastClickedID: 0
-    m_ExpandedIDs: d6bdc5ff929cc6ffd082c7ff68bdd2ff523bdbffe265e7ffce43f0ffd443f0ffd843f0ffe443f0ffec43f0ff1444f0ff2444f0ff0e7ef7ffa0bcfbffcceaffff56f0ffff58f0ffffd0fbffff16fcffff1afcffff00000000ca2d0000e62d0000
+    m_ExpandedIDs: 1eb2feff60c6ffff66c6ffff68c6ffff74c6ffff80c6ffffa6c6ffffc4c6ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -280,14 +280,14 @@ MonoBehaviour:
     width: 756
     height: 509
   m_SceneLighting: 1
-  lastFramingTime: 107857.08149904013
+  lastFramingTime: 45655.10773795843
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 79.77961, y: 4.0714793, z: 185.76952}
+    m_Target: {x: -42.70169, y: -146.66173, z: 98.80877}
     speed: 2
-    m_Value: {x: 79.77961, y: 4.0714793, z: 185.76952}
+    m_Value: {x: -42.70169, y: -146.66173, z: 98.80877}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -310,13 +310,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.00039533456, y: 0.98313, z: -0.18289626, w: 0.0020866217}
+    m_Target: {x: -0.13476664, y: 0.86522645, z: -0.341511, w: -0.34145504}
     speed: 2
-    m_Value: {x: 0.00039533453, y: 0.98313, z: -0.18289626, w: 0.0020866215}
+    m_Value: {x: -0.13476662, y: 0.8652263, z: -0.34151098, w: -0.341455}
   m_Size:
-    m_Target: 41.40023
+    m_Target: 233.34523
     speed: 2
-    m_Value: 41.40023
+    m_Value: 233.34523
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -417,19 +417,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Characters/Enemies
+    - Assets/Characters/Player
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Characters/Enemies
+  - Assets/Characters/Player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/buzz/Unity/RPG
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4e2c0000
-    m_LastClickedID: 11342
-    m_ExpandedIDs: 000000007c2600008c270000ce28000086290000f82b00004e2c0000582c0000d03a1a00ffffff7f
+    scrollPos: {x: 0, y: 55}
+    m_SelectedIDs: 222f0000
+    m_LastClickedID: 12066
+    m_ExpandedIDs: 0000000080260000042800004c280000ee290000122b0000142b0000f62e0000742f0000862f0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -457,7 +457,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007c2600008c270000ce28000086290000f82b00004e2c0000582c0000d03a1a00ffffff7f
+    m_ExpandedIDs: 0000000080260000042800004c280000ee290000122b0000142b0000f62e0000742f0000862f0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -482,9 +482,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: e8260100
+    m_LastClickedInstanceID: 75496
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300007226fbff000000006e4002004c020500f02b0000e0260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

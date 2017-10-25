@@ -6,10 +6,11 @@ using UnityEngine.AI;
 [RequireComponent(typeof (NavMeshAgent))]
 [RequireComponent(typeof (AICharacterControl))]
 [RequireComponent(typeof (ThirdPersonCharacter))]
+
 public class PlayerMovement : MonoBehaviour
 {
-	[SerializeField] float walkMoveStopRadius = 0.2f;
-	[SerializeField] float attackMoveStopRadius = 0;
+	//[SerializeField] float walkMoveStopRadius = 0.2f;
+	//[SerializeField] float attackMoveStopRadius = 0;
 
 
     ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object

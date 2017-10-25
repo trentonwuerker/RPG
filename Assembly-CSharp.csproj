@@ -63,6 +63,7 @@
      <Compile Include="Assets\Characters\Player\Projectile.cs" />
      <Compile Include="Assets\Utility\IDamagable.cs" />
      <Compile Include="Assets\Utility\SpinMe.cs" />
+     <Compile Include="Assets\Weapons\Dirty Old Hoe\Weapon.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
