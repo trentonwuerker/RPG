@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour, IDamagable {
 
 		if (distanceToPlayer <= attackRadius && !isAttacking) {
 			isAttacking = true;
-			InvokeRepeating ("SpawnProjectile", 0f, secondsBetweenShots);
+			InvokeRepeating ("FireProjectile", 0f, secondsBetweenShots);
 		}
 		if (distanceToPlayer > attackRadius) {
 			isAttacking = false;
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour, IDamagable {
 		}
 	}
 
-	void SpawnProjectile() {
+	void FireProjectile() {
 
 		GameObject newProjectile = Instantiate(projectileToUse, projectileSocket.transform.position, Quaternion.identity);
         Projectile projectileComponent = newProjectile.GetComponent<Projectile>();
