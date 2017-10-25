@@ -4588,7 +4588,7 @@ Prefab:
         type: 2}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: d25b9b1381a884e309995daa24f3f893, type: 3}
+      objectReference: {fileID: 2800000, guid: 2237398935fda60409ddf321a9b0df91, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75a43cca039264395b99698681e52275, type: 2}
   m_IsPrefabParent: 0
@@ -7164,8 +7164,14 @@ Prefab:
     - target: {fileID: 136085006382495260, guid: e97e06d2ab0ea451f94db9eda1b3650f,
         type: 2}
       propertyPath: m_Center.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114893306681618172, guid: e97e06d2ab0ea451f94db9eda1b3650f,
+        type: 2}
+      propertyPath: weaponInUse
+      value: 
+      objectReference: {fileID: 11400000, guid: a1e250a94f16446eb9b7313467512064,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e97e06d2ab0ea451f94db9eda1b3650f, type: 2}
   m_IsPrefabParent: 0

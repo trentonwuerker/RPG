@@ -674,6 +674,8 @@ MonoBehaviour:
   maxAttackRange: 2
   weaponInUse: {fileID: 11400000, guid: d043beeba17064ca9a0276b7c4ae2416, type: 2}
   weaponSocket: {fileID: 1406599833715030}
+  animatorOverrideController: {fileID: 22100000, guid: 3408a6d204e4343869fe8b11ce0b81f4,
+    type: 2}
 --- !u!114 &114930023211851504
 MonoBehaviour:
   m_ObjectHideFlags: 1

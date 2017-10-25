@@ -2,47 +2,53 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using UnityEngine.AI;
+using RPG.CameraUI;
 
-[RequireComponent(typeof (NavMeshAgent))]
-[RequireComponent(typeof (AICharacterControl))]
-[RequireComponent(typeof (ThirdPersonCharacter))]
-
-public class PlayerMovement : MonoBehaviour
+namespace RPG.Characters
 {
-	//[SerializeField] float walkMoveStopRadius = 0.2f;
-	//[SerializeField] float attackMoveStopRadius = 0;
+    [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(AICharacterControl))]
+    [RequireComponent(typeof(ThirdPersonCharacter))]
 
-
-    ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
-    CameraRaycaster cameraRaycaster;
-    Vector3 clickPoint;
-	AICharacterControl aiCharacterControl;
-	GameObject walkTarget;
-        
-    void Start()
+    public class PlayerMovement : MonoBehaviour
     {
-        cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
-        m_Character = GetComponent<ThirdPersonCharacter>();
-		aiCharacterControl = GetComponent<AICharacterControl> ();
-		walkTarget = new GameObject ("walkTarget");
+        //[SerializeField] float walkMoveStopRadius = 0.2f;
+        //[SerializeField] float attackMoveStopRadius = 0;
 
-		cameraRaycaster.notifyMouseClickObservers += ProcessMouseClick;
+
+        ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
+        CameraRaycaster cameraRaycaster;
+        Vector3 clickPoint;
+        AICharacterControl aiCharacterControl;
+        GameObject walkTarget;
+
+        void Start()
+        {
+            cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
+            m_Character = GetComponent<ThirdPersonCharacter>();
+            aiCharacterControl = GetComponent<AICharacterControl>();
+            walkTarget = new GameObject("walkTarget");
+
+            cameraRaycaster.notifyMouseClickObservers += ProcessMouseClick;
+        }
+
+        void ProcessMouseClick(RaycastHit raycastHit, int layerHit)
+        {
+            switch (layerHit)
+            {
+                case 8: //walkable
+                    walkTarget.transform.position = raycastHit.point;
+                    aiCharacterControl.SetTarget(walkTarget.transform);
+                    break;
+                case 9: //enemy
+                    GameObject enemy = raycastHit.collider.gameObject;
+                    aiCharacterControl.SetTarget(enemy.transform);
+                    break;
+                default:  //everything else
+                    Debug.LogWarning("Invalid Movement");
+                    return;
+            }
+        }
     }
 
-	void ProcessMouseClick(RaycastHit raycastHit, int layerHit) {
-		switch (layerHit) {
-		case 8: //walkable
-			walkTarget.transform.position = raycastHit.point;
-			aiCharacterControl.SetTarget (walkTarget.transform);
-				break;
-			case 9: //enemy
-				GameObject enemy = raycastHit.collider.gameObject;
-				aiCharacterControl.SetTarget (enemy.transform);
-				break;
-			default:  //everything else
-				Debug.LogWarning("Invalid Movement");
-				return;
-		}
-	}
 }
-
