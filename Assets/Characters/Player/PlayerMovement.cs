@@ -12,11 +12,7 @@ namespace RPG.Characters
 
     public class PlayerMovement : MonoBehaviour
     {
-        //[SerializeField] float walkMoveStopRadius = 0.2f;
-        //[SerializeField] float attackMoveStopRadius = 0;
 
-
-        ThirdPersonCharacter m_Character;   // A reference to the ThirdPersonCharacter on the object
         CameraRaycaster cameraRaycaster;
         Vector3 clickPoint;
         AICharacterControl aiCharacterControl;
@@ -25,7 +21,6 @@ namespace RPG.Characters
         void Start()
         {
             cameraRaycaster = Camera.main.GetComponent<CameraRaycaster>();
-            m_Character = GetComponent<ThirdPersonCharacter>();
             aiCharacterControl = GetComponent<AICharacterControl>();
             walkTarget = new GameObject("walkTarget");
 

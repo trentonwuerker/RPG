@@ -23,8 +23,6 @@ GameObject:
   - component: {fileID: 23805253877376314}
   - component: {fileID: 135058661197657074}
   - component: {fileID: 54179777671163056}
-  - component: {fileID: 114330605208542130}
-  - component: {fileID: 114539531557895176}
   - component: {fileID: 114400824577783384}
   m_Layer: 0
   m_Name: Projectile
@@ -215,21 +213,6 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114330605208542130
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1182872838089454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e004fefca5c7ba44d9c5ffd46fdee2ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovePower: 5
-  m_UseTorque: 1
-  m_MaxAngularVelocity: 25
-  m_JumpPower: 4
 --- !u!114 &114400824577783384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,19 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5bde4184b4594b638bb581321d7043f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10
+  projectileSpeed: 100
+  shooter: {fileID: 0}
   damageCaused: 10
---- !u!114 &114539531557895176
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1182872838089454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daa7e0829bc72c94babd728cc0466196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135058661197657074
 SphereCollider:
   m_ObjectHideFlags: 1

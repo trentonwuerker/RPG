@@ -1374,7 +1374,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149790}
   m_LocalRotation: {x: -0, y: -0.30708048, z: -0, w: 0.9516836}
-  m_LocalPosition: {x: -52.982746, y: 1.0658392, z: -14.0354185}
+  m_LocalPosition: {x: 0.88, y: 0.088201955, z: 49.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469942}
@@ -2410,7 +2410,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100098}
-  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
+  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2784,7 +2784,7 @@ MonoBehaviour:
   chaseRadius: 0
   damagePerShot: -100
   secondsBetweenShots: 1
-  projectileToUse: {fileID: 1638188515051348, guid: ae1710339a10c4936bc6e5c4ba72c3ee,
+  projectileToUse: {fileID: 1182872838089454, guid: a2bb31259b30f4c3c8e37c28aa31c120,
     type: 2}
   projectileSocket: {fileID: 1253661570330534}
   aimOffset: {x: 0, y: 1, z: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.CameraUI;
 using RPG.Core;
 using RPG.Weapons;
+using System;
 
 namespace RPG.Characters
 {
@@ -12,13 +13,12 @@ namespace RPG.Characters
 
         [SerializeField] float maxHealthPoints = 100f;
         [SerializeField] float damagePerHit = 10f;
-        [SerializeField] float minTimeBetweenHits = .5f;
-        [SerializeField] float maxAttackRange = 2f;
+        [SerializeField] int enemyLayer = 9;
         [SerializeField] Weapon weaponInUse;
         [SerializeField] GameObject weaponSocket;
         [SerializeField] AnimatorOverrideController animatorOverrideController;
- 
 
+        Animator animator;
         float currentHealthPoints;
         CameraRaycaster cameraRaycaster;
         float lastHitTime = 0f;
@@ -33,15 +33,26 @@ namespace RPG.Characters
 
         void Start()
         {
-            cameraRaycaster = FindObjectOfType<CameraRaycaster>();
-            cameraRaycaster.notifyMouseClickObservers += OnMouseClick;
-            currentHealthPoints = maxHealthPoints;
+            HandleMouseClick();
+            SetCurrentHealthPoints();
             PutWeaponInHand();
-            OverrideAnimatorController();
+            SetupRuntimeAnimator();
         }
 
-        void OverrideAnimatorController(){
-            var animator = GetComponent<Animator>();
+        private void HandleMouseClick()
+        {
+            cameraRaycaster = FindObjectOfType<CameraRaycaster>();
+            cameraRaycaster.notifyMouseClickObservers += OnMouseClick;
+        }
+
+        private void SetCurrentHealthPoints()
+        {
+            currentHealthPoints = maxHealthPoints;
+        }
+
+        void SetupRuntimeAnimator()
+        {
+            animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = animatorOverrideController;
             animatorOverrideController["DEFAULT ATTACK"] = weaponInUse.GetAttackAnimClip();
         }
@@ -57,22 +68,32 @@ namespace RPG.Characters
 
         void OnMouseClick(RaycastHit raycastHit, int layerHit)
         {
-            if (layerHit == 9)
+            if (layerHit == enemyLayer)
             {
                 var enemy = raycastHit.collider.gameObject;
 
-                if ((enemy.transform.position - transform.position).magnitude > maxAttackRange)
+                if (IsTargetInRange(enemy))
                 {
-                    return;
-                }
-
-                var enemyComponent = enemy.GetComponent<Enemy>();
-                if (Time.time - lastHitTime > minTimeBetweenHits)
-                {
-                    enemyComponent.TakeDamage(damagePerHit);
-                    lastHitTime = Time.time;
+                    AttackTarget(enemy);
                 }
             }
+        }
+
+        private void AttackTarget(GameObject target)
+        {
+            var enemyComponent = target.GetComponent<Enemy>();
+            if (Time.time - lastHitTime > weaponInUse.GetMinTimeBetweenHits())
+            {
+                animator.SetTrigger("Attack");
+                enemyComponent.TakeDamage(damagePerHit);
+                lastHitTime = Time.time;
+            }
+        }
+
+        private bool IsTargetInRange(GameObject target)
+        {
+            float distanceToTarget = (target.transform.position - transform.position).magnitude;
+            return distanceToTarget <= weaponInUse.GetMaxAttackRange();
         }
 
         public void TakeDamage(float damage)

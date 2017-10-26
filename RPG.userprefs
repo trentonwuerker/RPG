@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{47D170A3-4E94-791E-E30B-499A4F3BC047}|">
   <MonoDevelop.Ide.ItemProperties.RPG PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Characters/Player/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Core/AudioTrigger.cs">
     <Files>
-      <File FileName="Assets/Weapons/Weapon.cs" Line="21" Column="2" />
-      <File FileName="Assets/Weapons/Projectile.cs" Line="39" Column="2" />
-      <File FileName="Assets/Characters/Enemies/Enemy.cs" Line="5" Column="16" />
-      <File FileName="Assets/Characters/Player/Player.cs" Line="5" Column="16" />
+      <File FileName="Assets/Characters/Player/Player.cs" Line="96" Column="71" />
+      <File FileName="Assets/Characters/Player/PlayerMovement.cs" Line="14" Column="6" />
+      <File FileName="Assets/Weapons/Weapon.cs" Line="25" Column="35" />
+      <File FileName="Assets/Core/AudioTrigger.cs" Line="50" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
