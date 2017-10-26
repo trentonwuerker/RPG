@@ -120,11 +120,13 @@
     <Compile Include="Assets\Core\AudioTrigger.cs" />
     <Compile Include="Assets\Core\IDamagable.cs" />
     <Compile Include="Assets\Core\SpinMe.cs" />
+    <Compile Include="Assets\GameDev.tv\Environment\SpinMe.cs" />
     <Compile Include="Assets\Weapons\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Weapons\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Medieval Bridge\Shaders\Double sided.shader" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
