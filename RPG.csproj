@@ -120,6 +120,7 @@
     <Compile Include="Assets\Core\AudioTrigger.cs" />
     <Compile Include="Assets\Core\IDamagable.cs" />
     <Compile Include="Assets\Core\SpinMe.cs" />
+    <Compile Include="Assets\Energy.cs" />
     <Compile Include="Assets\GameDev.tv\Environment\SpinMe.cs" />
     <Compile Include="Assets\Weapons\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Weapons\Weapon.cs" />
