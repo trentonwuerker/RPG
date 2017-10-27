@@ -5,7 +5,7 @@
       <File FileName="Assets/Characters/Player/Player.cs" Line="96" Column="71" />
       <File FileName="Assets/Characters/Player/PlayerMovement.cs" Line="14" Column="6" />
       <File FileName="Assets/Weapons/Weapon.cs" Line="25" Column="35" />
-      <File FileName="Assets/Core/AudioTrigger.cs" Line="50" Column="2" />
+      <File FileName="Assets/Core/AudioTrigger.cs" Line="22" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
