@@ -4,10 +4,10 @@
 -langversion:4
 -out:'Temp/Assembly-CSharp-Editor.dll'
 -unsafe
--r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
 -r:'Library/ScriptAssemblies/Assembly-CSharp.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll'
+-r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll'
@@ -39,7 +39,6 @@
 -define:UNITY_2017
 -define:PLATFORM_ARCH_64
 -define:UNITY_64
--define:UNITY_ANALYTICS
 -define:ENABLE_AUDIO
 -define:ENABLE_CACHING
 -define:ENABLE_CLOTH

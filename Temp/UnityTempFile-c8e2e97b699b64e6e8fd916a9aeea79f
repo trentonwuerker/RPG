@@ -4,9 +4,9 @@
 -langversion:4
 -out:'Temp/Assembly-CSharp.dll'
 -unsafe
--r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll'
+-r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll'
@@ -24,7 +24,6 @@
 -define:UNITY_2017
 -define:PLATFORM_ARCH_64
 -define:UNITY_64
--define:UNITY_ANALYTICS
 -define:ENABLE_AUDIO
 -define:ENABLE_CACHING
 -define:ENABLE_CLOTH
@@ -105,7 +104,6 @@
 'Assets/CameraUI/CameraFollow.cs'
 'Assets/CameraUI/CameraRaycaster.cs'
 'Assets/CameraUI/CursorAffordance.cs'
-'Assets/Characters/C&C_Pack/Goblin_rouge/Script/Goblin_ro_ctrl.cs'
 'Assets/Characters/Enemies/Enemy.cs'
 'Assets/Characters/Enemies/EnemyHealthBar.cs'
 'Assets/Characters/Enemies/EnemyUI.cs'
@@ -118,6 +116,7 @@
 'Assets/Core/AudioTrigger.cs'
 'Assets/Core/IDamagable.cs'
 'Assets/Core/SpinMe.cs'
+'Assets/Energy.cs'
 'Assets/GameDev.tv/Environment/SpinMe.cs'
 'Assets/Weapons/Projectiles/Projectile.cs'
 'Assets/Weapons/Weapon.cs'
