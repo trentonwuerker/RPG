@@ -5,6 +5,7 @@ using RPG.CameraUI;
 using RPG.Core;
 using RPG.Weapons;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace RPG.Characters
 {
@@ -98,8 +99,22 @@ namespace RPG.Characters
 
         public void TakeDamage(float damage)
         {
-            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+            if (currentHealthPoints - damage <= 0)
+            {
+                currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+                StartCoroutine(KillPlayer());
+            }
+            else
+            {
+                currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+            }
+
         }
 
+        private IEnumerator KillPlayer()
+        {
+            yield return new WaitForSecondsRealtime(2f);
+            SceneManager.LoadScene("Death");
+        }
     }
 }
