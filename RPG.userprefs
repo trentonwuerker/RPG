@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{47D170A3-4E94-791E-E30B-499A4F3BC047}|">
   <MonoDevelop.Ide.ItemProperties.RPG PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Characters/Enemies/Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Characters/Player/PlayerHealthBar.cs">
     <Files>
-      <File FileName="Assets/Characters/Player/Player.cs" Line="24" Column="29" />
-      <File FileName="Assets/Characters/Enemies/Enemy.cs" Line="27" Column="15" />
+      <File FileName="Assets/Characters/Player/Player.cs" Line="128" Column="78" />
+      <File FileName="Assets/Characters/Enemies/Enemy.cs" Line="100" Column="30" />
+      <File FileName="Assets/Characters/Player/PlayerHealthBar.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

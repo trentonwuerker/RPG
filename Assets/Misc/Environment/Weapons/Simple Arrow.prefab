@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4750687242688692}
   - component: {fileID: 33269337043308202}
   - component: {fileID: 23830724189926304}
+  - component: {fileID: 65234300697896008}
   m_Layer: 0
   m_Name: Simple Arrow
   m_TagString: Untagged
@@ -80,3 +81,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659504181823486}
   m_Mesh: {fileID: 4300000, guid: 07119b288adf12542aa4497154e38e05, type: 3}
+--- !u!65 &65234300697896008
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659504181823486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.081853, y: 0.8154753, z: 0.081853}
+  m_Center: {x: 0, y: 0.38943252, z: 0}
