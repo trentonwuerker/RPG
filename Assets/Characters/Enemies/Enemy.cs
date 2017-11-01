@@ -93,7 +93,7 @@ namespace RPG.Characters
 
         private IEnumerator killEnemy()
         {
-            yield return new WaitForSecondsRealtime(2f);
+            yield return new WaitForSecondsRealtime(1.5f);
             Destroy(gameObject);
         }
 
@@ -101,6 +101,7 @@ namespace RPG.Characters
         {
             if (!isDead)
             {
+                animator.SetTrigger("EnemyAttack");
                 GameObject newProjectile = Instantiate(projectileToUse, projectileSocket.transform.position, Quaternion.identity);
                 Projectile projectileComponent = newProjectile.GetComponent<Projectile>();
                 projectileComponent.damageCaused = damagePerShot;
