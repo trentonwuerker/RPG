@@ -1,0 +1,2 @@
+/Users/buzz/workspace/quarter4/RPG/Temp/UnityVS_obj/Debug/RPG.csprojResolveAssemblyReference.cache
+/Users/buzz/workspace/quarter4/RPG/Temp/UnityVS_obj/Debug/RPG.csproj.CoreCompileInputs.cache

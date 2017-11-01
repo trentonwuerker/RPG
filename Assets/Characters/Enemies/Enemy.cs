@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 using RPG.Core;
 using RPG.Weapons;
+using System;
 
 namespace RPG.Characters
 {
@@ -18,13 +19,14 @@ namespace RPG.Characters
         [SerializeField] GameObject projectileToUse;
         [SerializeField] GameObject projectileSocket;
         [SerializeField] Vector3 aimOffset = new Vector3(0, 1.5f, 0);
+        //[SerializeField] AnimatorOverrideController animatorOverrideController;
 
+        Animator animator;
+        bool isDead = false;
         bool isAttacking = false;
-
-
         float currentHealthPoints;
         AICharacterControl aiCharacterControl = null;
-        GameObject player = null;
+        Player player = null;
 
         public float healthAsPercentage
         {
@@ -34,23 +36,23 @@ namespace RPG.Characters
             }
         }
 
-        public void TakeDamage(float damage)
-        {
-            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
-            if (currentHealthPoints <= 0) { Destroy(gameObject); }
-        }
-
         void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = FindObjectOfType<Player>();
             aiCharacterControl = GetComponent<AICharacterControl>();
             currentHealthPoints = maxHealthPoints;
+            SetupRuntimeAnimator();
+
         }
 
         void Update()
         {
+            if (player.healthAsPercentage <= Mathf.Epsilon)
+            {
+                StopAllCoroutines();
+                Destroy(this);
+            }
             float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-
             if (distanceToPlayer <= attackRadius && !isAttacking)
             {
                 isAttacking = true;
@@ -73,17 +75,41 @@ namespace RPG.Characters
             }
         }
 
+        void SetupRuntimeAnimator()
+        {
+            animator = GetComponent<Animator>();
+        }
+
+        public void TakeDamage(float damage)
+        {
+            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+            if (currentHealthPoints <= 0)
+            {
+                isDead = true;
+                animator.SetTrigger("Death");
+                StartCoroutine(killEnemy());
+            }
+        }
+
+        private IEnumerator killEnemy()
+        {
+            yield return new WaitForSecondsRealtime(2f);
+            Destroy(gameObject);
+        }
+
         void FireProjectile()
         {
+            if (!isDead)
+            {
+                GameObject newProjectile = Instantiate(projectileToUse, projectileSocket.transform.position, Quaternion.identity);
+                Projectile projectileComponent = newProjectile.GetComponent<Projectile>();
+                projectileComponent.damageCaused = damagePerShot;
+                projectileComponent.SetShooter(gameObject);
 
-            GameObject newProjectile = Instantiate(projectileToUse, projectileSocket.transform.position, Quaternion.identity);
-            Projectile projectileComponent = newProjectile.GetComponent<Projectile>();
-            projectileComponent.damageCaused = damagePerShot;
-            projectileComponent.SetShooter(gameObject);
-
-            Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized;
-            float projectileSpeed = newProjectile.GetComponent<Projectile>().GetDefaultLaunchSpeed();
-            newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileSpeed;
+                Vector3 unitVectorToPlayer = (player.transform.position + aimOffset - projectileSocket.transform.position).normalized;
+                float projectileSpeed = newProjectile.GetComponent<Projectile>().GetDefaultLaunchSpeed();
+                newProjectile.GetComponent<Rigidbody>().velocity = unitVectorToPlayer * projectileSpeed;
+            }
         }
     }
 }
