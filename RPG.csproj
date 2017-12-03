@@ -105,8 +105,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraRaycaster.cs" />
     <Compile Include="Assets\CameraUI\CameraFollow.cs" />
-    <Compile Include="Assets\CameraUI\CameraRaycaster.cs" />
     <Compile Include="Assets\CameraUI\CursorAffordance.cs" />
     <Compile Include="Assets\Characters\Enemies\Enemy.cs" />
     <Compile Include="Assets\Characters\Enemies\EnemyHealthBar.cs" />
