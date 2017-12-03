@@ -118,10 +118,10 @@
     <Compile Include="Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
     <Compile Include="Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
     <Compile Include="Assets\Core\AudioTrigger.cs" />
+    <Compile Include="Assets\Core\Energy.cs" />
     <Compile Include="Assets\Core\IDamagable.cs" />
     <Compile Include="Assets\Core\SpinMe.cs" />
-    <Compile Include="Assets\Energy.cs" />
-    <Compile Include="Assets\GameDev.tv\Environment\SpinMe.cs" />
+    <Compile Include="Assets\Misc\Environment\SpinMe.cs" />
     <Compile Include="Assets\Weapons\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Weapons\Weapon.cs" />
   </ItemGroup>

@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Motherland.unity
+    guid: 8f04073aeeebb4cf49d93ab8e00fe3d2
+  - enabled: 1
+    path: Assets/_Scenes/Death.unity
+    guid: 2be02370583d549e5b070ba117cfebce

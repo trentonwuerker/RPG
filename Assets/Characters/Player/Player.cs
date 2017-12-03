@@ -5,6 +5,7 @@ using RPG.CameraUI;
 using RPG.Core;
 using RPG.Weapons;
 using System;
+using UnityEngine.SceneManagement;
 
 namespace RPG.Characters
 {
@@ -17,19 +18,15 @@ namespace RPG.Characters
         [SerializeField] Weapon weaponInUse;
         [SerializeField] GameObject weaponSocket;
         [SerializeField] AnimatorOverrideController animatorOverrideController;
+        [SerializeField] AudioClip[] damageSounds;
+        [SerializeField] AudioClip[] deathSounds;
 
+        bool isDying = false;
+        AudioSource audioSource;
         Animator animator;
         float currentHealthPoints;
         CameraRaycaster cameraRaycaster;
         float lastHitTime = 0f;
-
-        public float healthAsPercentage
-        {
-            get
-            {
-                return currentHealthPoints / maxHealthPoints;
-            }
-        }
 
         void Start()
         {
@@ -37,6 +34,15 @@ namespace RPG.Characters
             SetCurrentHealthPoints();
             PutWeaponInHand();
             SetupRuntimeAnimator();
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        public float healthAsPercentage
+        {
+            get
+            {
+                return currentHealthPoints / maxHealthPoints;
+            }
         }
 
         private void HandleMouseClick()
@@ -98,8 +104,29 @@ namespace RPG.Characters
 
         public void TakeDamage(float damage)
         {
-            currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+            audioSource.clip = damageSounds[UnityEngine.Random.Range(0, damageSounds.Length)];
+            audioSource.Play();
+
+            if (currentHealthPoints - damage <= 0)
+            {
+                currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+                audioSource.clip = deathSounds[0];
+                audioSource.Play();
+
+                animator.SetTrigger("Death");
+                StartCoroutine(KillPlayer());
+            }
+            else
+            {
+                currentHealthPoints = Mathf.Clamp(currentHealthPoints - damage, 0f, maxHealthPoints);
+            }
+
         }
 
+        private IEnumerator KillPlayer()
+        {
+            yield return new WaitForSecondsRealtime(audioSource.clip.length);
+            SceneManager.LoadScene("Death");
+        }
     }
 }
